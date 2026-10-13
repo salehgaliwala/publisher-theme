@@ -226,6 +226,9 @@ if ( $show_excerpt = ! empty( $post->post_excerpt ) ) {
 		</article>
 		<?php
 
+		// Comments and comment form
+		publisher_comments_template();
+
 		// Author box
 		if ( publisher_get_option( 'post_author_box' ) == 'show' ) {
 			publisher_get_view( 'post', '_author' );
@@ -234,9 +237,6 @@ if ( $show_excerpt = ! empty( $post->post_excerpt ) ) {
 		?>
 	</div>
 	<?php
-
-	// Comments and comment form
-	publisher_comments_template();
 
 	// After ajaxed post
 	publisher_show_ad_location( 'post_ajax_related', array( 'container-class' => 'better-ads-ajaxed-related' ) );
