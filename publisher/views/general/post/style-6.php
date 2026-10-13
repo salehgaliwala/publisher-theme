@@ -251,6 +251,31 @@ do_action( 'publisher/content-wrap/before' );
 								</article>
 								<?php
 
+							// Newsletter before comment
+							publisher_show_newsletter_location( 'post_before_comment', array(
+								'custom-data' => array(
+									'style-type' => 'wide'
+								),
+								'show-error'  => false,
+							) );
+
+							// Comments and comment form
+							publisher_comments_template();
+
+							// Ad after first post for related posts
+							if ( publisher_get_related_post_type() == 'infinity-related-post' ) {
+								publisher_show_ad_location( 'post_ajax_related', array( 'container-class' => 'better-ads-ajaxed-related' ) );
+							}
+
+							// Newsletter after comment
+							publisher_show_newsletter_location( 'post_after_comment', array(
+								'custom-data' => array(
+									'style-type' => 'wide'
+								),
+								'show-error'  => false,
+							) );
+
+
 								// Newsletter before author box
 								publisher_show_newsletter_location( 'post_before_author', array(
 									'custom-data' => array(
@@ -306,31 +331,6 @@ do_action( 'publisher/content-wrap/before' );
 									'container-class' => 'better-ads-after-related',
 								)
 							);
-
-							// Newsletter before comment
-							publisher_show_newsletter_location( 'post_before_comment', array(
-								'custom-data' => array(
-									'style-type' => 'wide'
-								),
-								'show-error'  => false,
-							) );
-
-							// Comments and comment form
-							publisher_comments_template();
-
-							// Ad after first post for related posts
-							if ( publisher_get_related_post_type() == 'infinity-related-post' ) {
-								publisher_show_ad_location( 'post_ajax_related', array( 'container-class' => 'better-ads-ajaxed-related' ) );
-							}
-
-							// Newsletter after comment
-							publisher_show_newsletter_location( 'post_after_comment', array(
-								'custom-data' => array(
-									'style-type' => 'wide'
-								),
-								'show-error'  => false,
-							) );
-
 							?>
 						</div><!-- .content-column -->
 						<?php
