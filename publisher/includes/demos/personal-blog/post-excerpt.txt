@@ -1,0 +1,1 @@
+As a WordPress theme author there are many ways you can organize your production theme pack, but ThemeForest reviewers strictly observe theme submission requirements and unwritten recommendations. In this post I will explain how to prepare your production theme demo pack; what you should include, and what you should avoid.
